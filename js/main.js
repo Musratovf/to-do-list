@@ -42,12 +42,11 @@ function showTasks() {
     }
     let newLiTag = ''
     listArr.forEach((element, index) => {
-        newLiTag += <li class="todolist__item">${element}<span onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>
+        newLiTag += `<li class="todolist__item">${element}<span onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`
     });
     todoList.innerHTML = newLiTag;
     elInput.value = null;
 }
-
 function deleteTask(index) {
     let getLocalStorage = window.localStorage.getItem("New Todo");
     listArr = JSON.parse(getLocalStorage);
