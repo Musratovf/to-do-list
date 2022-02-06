@@ -47,3 +47,17 @@ function showTasks() {
     todoList.innerHTML = newLiTag;
     elInput.value = null;
 }
+
+function deleteTask(index) {
+    let getLocalStorage = window.localStorage.getItem("New Todo");
+    listArr = JSON.parse(getLocalStorage);
+    listArr.splice(index, 1)
+    localStorage.setItem("New Todo", JSON.stringify(listArr));
+    showTasks()
+}
+
+deleteAllBtn.onclick = () => {
+    listArr = []
+    localStorage.setItem("New Todo", JSON.stringify(listArr));
+    showTasks()
+}
