@@ -11,3 +11,16 @@ elInput.onkeyup = () => {
         headerBtn.classList.remove("active")
     }
 }
+
+headerBtn.onclick = () => {
+    let userData = elInput.value;
+    let getLocalStorage = window.localStorage.getItem("New Todo");
+    if(getLocalStorage == null) {
+        listArr = [];
+    }else {
+        listArr = JSON.parse(getLocalStorage);
+    }
+    listArr.push(userData);
+    localStorage.setItem("New Todo", JSON.stringify(listArr));
+    showTasks()
+};
