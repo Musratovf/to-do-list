@@ -36,3 +36,58 @@ body {
     pointer-events: auto;
 
 }
+.todolist {
+    list-style: none;
+    padding: 0;
+    
+    max-height: 250px;
+    overflow-y: auto;
+}
+.todolist__item {
+    display: flex;
+    align-items: center;
+    line-height: 45px;
+    position: relative;
+    background-color: #e4e4e4;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 0 20px;
+    cursor: default;
+    overflow: hidden;
+}
+.todolist__item span {
+    position: absolute;
+    right: -44px;
+    border-radius:3px ;
+    color: #ffffff;
+    display: block; 
+    padding: 0 15px 0 15px;
+    background-color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.todolist__item:hover span {
+    right: 0;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+.footer__btn {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background:#8e49e8;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.footer__btn.active {
+    opacity: 1;
+    pointer-events: auto;
+
+}
